@@ -240,7 +240,7 @@
         {
             "description": "MySQL Database user name",
             "name": "MYSQL_USERNAME",
-            "value": "root",
+            "value": "jdv",
             "required": true
         },
         {
@@ -304,7 +304,7 @@
         {
             "description": "PostgresSQL Database user name",
             "name": "POSTGRESQL_USERNAME",
-            "value": "postgres",
+            "value": "jdv",
             "required": true
         },
         {
