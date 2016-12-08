@@ -421,7 +421,7 @@
             "metadata": {
                 "name": "${APPLICATION_NAME}-postgresql",
                 "labels": {
-                    "application": "${APPLICATION_NAME}-postgresql"
+                    "application": "${APPLICATION_NAME}"
                 },
                 "annotations": {
                     "description": "The database server's port."
@@ -445,7 +445,7 @@
             "metadata": {
                 "name": "${APPLICATION_NAME}-mysql",
                 "labels": {
-                    "application": "${APPLICATION_NAME}-mysql"
+                    "application": "${APPLICATION_NAME}"
                 },
                 "annotations": {
                     "description": "The database server's port."
