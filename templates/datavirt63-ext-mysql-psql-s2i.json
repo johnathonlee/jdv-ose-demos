@@ -683,7 +683,7 @@
             "spec": {
                 "strategy": { 
                     "type": "Recreate",
-                    "rollingParams": {
+                    "recreateParams": {
                         "post": {
                             "failurePolicy": "Abort",
                             "execNewPod": {
