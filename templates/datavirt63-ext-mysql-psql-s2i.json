@@ -688,7 +688,16 @@
                             "failurePolicy": "Abort",
                             "execNewPod": {
                                 "containerName": "${APPLICATION_NAME}",
-                                "command": [ "mysql -u ${MYSQL_USERNAME} --password='{MYSQL_PASSWORD}' -D ${MYSQL_DATABASE} -h ${APPLICATION_NAME}-mysql < /home/jboss/source/extentions/extras/eucustomers-mysql.sql" ]
+                                "command": [ "mysql", 
+                                            "-u",
+                                            "${MYSQL_USERNAME}",
+                                            "--password='${MYSQL_PASSWORD}'",
+                                            "-D", 
+                                            "${MYSQL_DATABASE}",
+                                            "-h", 
+                                            "${APPLICATION_NAME}-mysql",
+                                            "<",
+                                            "/home/jboss/source/extentions/extras/eucustomers-mysql.sql" ]
                             }
                         }
                     }
