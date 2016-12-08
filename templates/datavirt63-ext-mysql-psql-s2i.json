@@ -681,14 +681,14 @@
                 }
             },
             "spec": {
-                "strategy": {
+                "strategy": { 
                     "type": "Recreate",
                     "rollingParams": {
                         "post": {
                             "failurePolicy": "Abort",
                             "execNewPod": {
                                 "containerName": "${APPLICATION_NAME}",
-                                "command": [ "mysql", "-u ${MYSQL_USERNAME}", "-p ${MYSQL_PASSWORD}", "-D MYSQL_DATABSE", "< /home/jboss/source/extentions/extras" ]
+                                "command": [ "mysql", "-u ${MYSQL_USERNAME}", "-p ${MYSQL_PASSWORD}", "-D MYSQL_DATABASE", "< /home/jboss/source/extentions/extras" ]
                             }
                         }
                     }
@@ -894,7 +894,31 @@
                                     {
                                         "name": "DATAVIRT_TRANSPORT_KEYSTORE_PASSWORD",
                                         "value": "${HTTPS_PASSWORD}"
-                                    }
+                                    },
+                                    {
+                                        "name": "MYSQL_USERNAME",
+                                        "value": "${MYSQL_USERNAME}"
+                                    } ,  
+                                    {
+                                        "name": "MYSQL_PASSWORD",
+                                        "value": "${MYSQL_PASSWORD}"
+                                    } ,  
+                                    {
+                                        "name": "MYSQL_DATABASE",
+                                        "value": "${MYSQL_DATABASE}"
+                                    } ,  
+                                    {
+                                        "name": "POSTGRESQL_USERNAME",
+                                        "value": "${POSTGRESQL_USERNAME}"
+                                    } ,  
+                                    {
+                                        "name": "MYSQL_PASSWORD",
+                                        "value": "${POSTGRESQL_PASSWORD}"
+                                    } ,  
+                                    {
+                                        "name": "POSTGRESQL_DATABSE",
+                                        "value": "${POSTGRESQL_DATABASE}"
+                                    } 
                                 ]
                             }
                         ],
