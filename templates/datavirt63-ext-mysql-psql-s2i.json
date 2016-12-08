@@ -261,7 +261,13 @@
             "value": "eucustomers",
             "required": true
         },
-                {
+        {
+            "description": "MySQL Database port",
+            "name": "MYSQL_PORT",
+            "value": "3306",
+            "required": true
+        },        
+        {
             "description": "Sets xa-pool/min-pool-size for the configured datasource.",
             "name": "MYSQL_MIN_POOL_SIZE",
             "required": false
@@ -325,7 +331,13 @@
             "value": "uscustomers",
             "required": true
         },
-             {
+        {
+            "description": "PostgreSQL Database port",
+            "name": "POSTGRESQL_PORT",
+            "value": "5432",
+            "required": true
+        },        
+        {
             "description": "Sets xa-pool/min-pool-size for the configured datasource.",
             "name": "POSTGRESQL_MIN_POOL_SIZE",
             "required": false
@@ -398,8 +410,8 @@
             "spec": {
                 "ports": [
                     {
-                        "port": 5432,
-                        "targetPort": 5432
+                        "port": "${POSTGRESQL_PORT}",
+                        "targetPort": "${POSTGRESQL_PORT}"
                     }
                 ],
                 "selector": {
@@ -409,7 +421,7 @@
             "metadata": {
                 "name": "${APPLICATION_NAME}-postgresql",
                 "labels": {
-                    "application": "${APPLICATION_NAME}"
+                    "application": "${APPLICATION_NAME}-postgresql"
                 },
                 "annotations": {
                     "description": "The database server's port."
@@ -422,8 +434,8 @@
             "spec": {
                 "ports": [
                     {
-                        "port": 3306,
-                        "targetPort": 3306
+                        "port": "${MYSQL_PORT}",
+                        "targetPort": "${MYSQL_PORT}"
                     }
                 ],
                 "selector": {
@@ -433,7 +445,7 @@
             "metadata": {
                 "name": "${APPLICATION_NAME}-mysql",
                 "labels": {
-                    "application": "${APPLICATION_NAME}"
+                    "application": "${APPLICATION_NAME}-mysql"
                 },
                 "annotations": {
                     "description": "The database server's port."
@@ -896,6 +908,14 @@
                                         "value": "${HTTPS_PASSWORD}"
                                     },
                                     {
+                                        "name": "EUCUSTOMERS_SERVICE_HOST",
+                                        "value": "${APPLICATION_NAME}-mysql"                                         
+                                    },
+                                    {
+                                        "name": "EUCUSTOMERS_SERVICE_PORT",
+                                        "value": "${HTTPS_PASSWORD}"                                         
+                                    },
+                                    {
                                         "name": "MYSQL_USERNAME",
                                         "value": "${MYSQL_USERNAME}"
                                     } ,  
@@ -916,7 +936,7 @@
                                         "value": "${POSTGRESQL_PASSWORD}"
                                     } ,  
                                     {
-                                        "name": "POSTGRESQL_DATABSE",
+                                        "name": "POSTGRESQL_DATABASE",
                                         "value": "${POSTGRESQL_DATABASE}"
                                     } 
                                 ]
