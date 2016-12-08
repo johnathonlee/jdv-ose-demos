@@ -239,13 +239,13 @@
         },
         {
             "description": "MySQL Database user name",
-            "name": "DB_USERNAME",
+            "name": "MYSQL_USERNAME",
             "value": "jdv",
             "required": true
         },
         {
             "description": "MySQL Database user password",
-            "name": "DB_PASSWORD",
+            "name": "MYSQL_PASSWORD",
             "value": "redhat1!",
             "required": true
         },
