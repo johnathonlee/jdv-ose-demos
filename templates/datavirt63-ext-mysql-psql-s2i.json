@@ -260,13 +260,7 @@
             "name": "MYSQL_DATABASE",
             "value": "eucustomers",
             "required": true
-        },
-        {
-            "description": "MySQL Database port",
-            "name": "MYSQL_PORT",
-            "value": 3306,
-            "required": true
-        },        
+        },       
         {
             "description": "Sets xa-pool/min-pool-size for the configured datasource.",
             "name": "MYSQL_MIN_POOL_SIZE",
@@ -331,12 +325,6 @@
             "value": "uscustomers",
             "required": true
         },
-        {
-            "description": "PostgreSQL Database port",
-            "name": "POSTGRESQL_PORT",
-            "value": 5432,
-            "required": true
-        },        
         {
             "description": "Sets xa-pool/min-pool-size for the configured datasource.",
             "name": "POSTGRESQL_MIN_POOL_SIZE",
@@ -700,7 +688,7 @@
                             "failurePolicy": "Abort",
                             "execNewPod": {
                                 "containerName": "${APPLICATION_NAME}",
-                                "command": [ "mysql", "-u ${MYSQL_USERNAME}", "-p ${MYSQL_PASSWORD}", "-D MYSQL_DATABASE", "< /home/jboss/source/extentions/extras" ]
+                                "command": [ "mysql", "-u ${MYSQL_USERNAME}", "-p ${MYSQL_PASSWORD}", "-D MYSQL_DATABASE", "< /home/jboss/source/extentions/extras/eucustomers-mysql.sql" ]
                             }
                         }
                     }
@@ -924,7 +912,7 @@
                                     },   
                                     {
                                         "name": "EUCUSTOMERS_SERVICE_PORT",
-                                        "value": "${MYSQL_PORT}"                                         
+                                        "value": "3306"                                         
                                     },                                                                   
                                     {
                                         "name": "POSTGRESQL_USERNAME",
@@ -944,7 +932,7 @@
                                     },
                                     {
                                         "name": "USCUSTOMERS_SERVICE_PORT",
-                                        "value": "${POSTGRESQL_PORT}"                                         
+                                        "value": "5432"                                         
                                     }                                    
                                 ]
                             }
