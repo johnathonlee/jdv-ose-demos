@@ -410,8 +410,8 @@
             "spec": {
                 "ports": [
                     {
-                        "port": "${MYSQL_PORT}",
-                        "targetPort": "${MYSQL_PORT}"
+                        "port": "${POSTGRESQL_PORT}",
+                        "targetPort": "${POSTGRESQL_PORT}"
                     }
                 ],
                 "selector": {
@@ -434,8 +434,8 @@
             "spec": {
                 "ports": [
                     {
-                        "port": "${POSTGRESQL_PORT}",
-                        "targetPort": "${POSTGRESQL_PORT}"
+                        "port": "${MYSQL_PORT}",
+                        "targetPort": "${MYSQL_PORT}"
                     }
                 ],
                 "selector": {
