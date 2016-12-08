@@ -251,13 +251,13 @@
         },
         {
             "description": "Database JNDI name used by application to resolve the datasource, e.g. java:/jboss/datasources/mysql",
-            "name": "DB_JNDI",
+            "name": "MYSQL_JNDI",
             "value": "java:jboss/datasources/EUCustomersDS",
             "required": false
         },
         {
             "description": "Database name",
-            "name": "DB_DATABASE",
+            "name": "MYSQL_DATABASE",
             "value": "eucustomers",
             "required": true
         },
