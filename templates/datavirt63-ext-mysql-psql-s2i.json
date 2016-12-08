@@ -264,7 +264,7 @@
         {
             "description": "MySQL Database port",
             "name": "MYSQL_PORT",
-            "value": "3306",
+            "value": 3306,
             "required": true
         },        
         {
@@ -334,7 +334,7 @@
         {
             "description": "PostgreSQL Database port",
             "name": "POSTGRESQL_PORT",
-            "value": "5432",
+            "value": 5432,
             "required": true
         },        
         {
@@ -410,8 +410,8 @@
             "spec": {
                 "ports": [
                     {
-                        "port": "${POSTGRESQL_PORT}",
-                        "targetPort": "${POSTGRESQL_PORT}"
+                        "port": 5432,
+                        "targetPort": 5432
                     }
                 ],
                 "selector": {
@@ -434,8 +434,8 @@
             "spec": {
                 "ports": [
                     {
-                        "port": "${MYSQL_PORT}",
-                        "targetPort": "${MYSQL_PORT}"
+                        "port": 3306,
+                        "targetPort": 3306
                     }
                 ],
                 "selector": {
