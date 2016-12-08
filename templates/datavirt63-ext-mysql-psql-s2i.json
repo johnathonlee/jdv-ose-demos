@@ -239,25 +239,25 @@
         },
         {
             "description": "MySQL Database user name",
-            "name": "MYSQL_USERNAME",
+            "name": "DB_USERNAME",
             "value": "jdv",
             "required": true
         },
         {
             "description": "MySQL Database user password",
-            "name": "MYSQL_PASSWORD",
+            "name": "DB_PASSWORD",
             "value": "redhat1!",
             "required": true
         },
         {
             "description": "Database JNDI name used by application to resolve the datasource, e.g. java:/jboss/datasources/mysql",
-            "name": "MYSQL_JNDI",
+            "name": "DB_JNDI",
             "value": "java:jboss/datasources/EUCustomersDS",
             "required": false
         },
         {
             "description": "Database name",
-            "name": "MYSQL_DATABASE",
+            "name": "DB_DATABASE",
             "value": "eucustomers",
             "required": true
         },
@@ -392,6 +392,54 @@
                 }
             }
         },
+        {
+            "kind": "Service",
+            "apiVersion": "v1",
+            "spec": {
+                "ports": [
+                    {
+                        "port": 5432,
+                        "targetPort": 5432
+                    }
+                ],
+                "selector": {
+                    "deploymentConfig": "${APPLICATION_NAME}-postgresql"
+                }
+            },
+            "metadata": {
+                "name": "${APPLICATION_NAME}-postgresql",
+                "labels": {
+                    "application": "${APPLICATION_NAME}"
+                },
+                "annotations": {
+                    "description": "The database server's port."
+                }
+            }
+        },
+        {
+            "kind": "Service",
+            "apiVersion": "v1",
+            "spec": {
+                "ports": [
+                    {
+                        "port": 3306,
+                        "targetPort": 3306
+                    }
+                ],
+                "selector": {
+                    "deploymentConfig": "${APPLICATION_NAME}-mysql"
+                }
+            },
+            "metadata": {
+                "name": "${APPLICATION_NAME}-mysql",
+                "labels": {
+                    "application": "${APPLICATION_NAME}"
+                },
+                "annotations": {
+                    "description": "The database server's port."
+                }
+            }
+        },        
         {
             "kind": "Route",
             "apiVersion": "v1",
@@ -837,11 +885,6 @@
                                     {
                                         "name": "DATAVIRT_TRANSPORT_KEYSTORE_PASSWORD",
                                         "value": "${HTTPS_PASSWORD}"
-                                    },
-                                    {
-                                        "name": "QS_DB_TYPE",
-                                        "value": "derby",
-                                        "description": "Used soley by the quickstart and set here to ensure the template can be instatiated with its default parameter values, i.e. so itworks ootb."
                                     }
                                 ]
                             }
