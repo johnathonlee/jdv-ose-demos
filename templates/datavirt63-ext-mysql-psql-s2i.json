@@ -410,8 +410,8 @@
             "spec": {
                 "ports": [
                     {
-                        "port": 5432,
-                        "targetPort": 5432
+                        "port": "${MYSQL_PORT}",
+                        "targetPort": "${MYSQL_PORT}"
                     }
                 ],
                 "selector": {
@@ -421,7 +421,7 @@
             "metadata": {
                 "name": "${APPLICATION_NAME}-postgresql",
                 "labels": {
-                    "application": "${APPLICATION_NAME}"
+                    "application": "${APPLICATION_NAME}-postgresql"
                 },
                 "annotations": {
                     "description": "The database server's port."
@@ -434,8 +434,8 @@
             "spec": {
                 "ports": [
                     {
-                        "port": 3306,
-                        "targetPort": 3306
+                        "port": "${POSTGRESQL_PORT}",
+                        "targetPort": "${POSTGRESQL_PORT}"
                     }
                 ],
                 "selector": {
@@ -445,7 +445,7 @@
             "metadata": {
                 "name": "${APPLICATION_NAME}-mysql",
                 "labels": {
-                    "application": "${APPLICATION_NAME}"
+                    "application": "${APPLICATION_NAME}-mysql"
                 },
                 "annotations": {
                     "description": "The database server's port."
@@ -908,18 +908,9 @@
                                         "value": "${HTTPS_PASSWORD}"
                                     },
                                     {
-                                        "name": "EUCUSTOMERS_SERVICE_HOST",
-                                        "value": "${APPLICATION_NAME}-mysql"                                         
-                                    },
-                                    {
-                                        "name": "EUCUSTOMERS_SERVICE_PORT",
-                                        "value": "${HTTPS_PASSWORD}"                                         
-                                    },
-                                    {
                                         "name": "MYSQL_USERNAME",
                                         "value": "${MYSQL_USERNAME}"
-                                    } ,  
-                                    {
+                                    } ,                                        {
                                         "name": "MYSQL_PASSWORD",
                                         "value": "${MYSQL_PASSWORD}"
                                     } ,  
@@ -928,17 +919,33 @@
                                         "value": "${MYSQL_DATABASE}"
                                     } ,  
                                     {
+                                        "name": "EUCUSTOMERS_SERVICE_HOST",
+                                        "value": "${APPLICATION_NAME}-mysql"                                         
+                                    },   
+                                    {
+                                        "name": "EUCUSTOMERS_SERVICE_PORT",
+                                        "value": "${MYSQL_PORT}"                                         
+                                    },                                                                   
+                                    {
                                         "name": "POSTGRESQL_USERNAME",
                                         "value": "${POSTGRESQL_USERNAME}"
                                     } ,  
                                     {
-                                        "name": "MYSQL_PASSWORD",
+                                        "name": "POSTGRESQL_PASSWORD",
                                         "value": "${POSTGRESQL_PASSWORD}"
                                     } ,  
                                     {
                                         "name": "POSTGRESQL_DATABASE",
                                         "value": "${POSTGRESQL_DATABASE}"
-                                    } 
+                                    },
+                                    {
+                                        "name": "USCUSTOMERS_SERVICE_HOST",
+                                        "value": "${APPLICATION_NAME}-postgresql"                                         
+                                    },
+                                    {
+                                        "name": "USCUSTOMERS_SERVICE_PORT",
+                                        "value": "${POSTGRESQL_PORT}"                                         
+                                    }                                    
                                 ]
                             }
                         ],
