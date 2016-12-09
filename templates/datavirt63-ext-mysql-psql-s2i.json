@@ -29,14 +29,7 @@
             "name": "CONFIGURATION_NAME",
             "value": "datavirt-app-config",
             "required": true
-        },
-        {
-            "description": "The name of the secret containing post-configure.sh to populate the databases.",
-            "displayName": "Post configure populate DBMS Secret Name",
-            "name": "POPULATE_DBMS_NAME",
-            "value": "datavirt-populate-dbms",
-            "required": true
-        },        
+        },     
         {
             "description": "Specify a custom hostname for the http route.  Leave blank to use default hostname, e.g.: <service-name>-<project>.<default-domain-suffix>",
             "displayName": "Custom http Route Hostname",
@@ -691,9 +684,9 @@
                 "strategy": { 
                     "type": "Recreate" ,
                     "recreateParams": {
-                        "post": {
-                            "container-name":"${APPLICATION_NAME}",
+                        "post": {                            
                             "execNewPod": {
+                                "container-name":"${APPLICATION_NAME}",
                                 "command": [ "bash","-c","$HOME/source/extensions/extras/populatedbms.sh"]
                             }
                         } 
