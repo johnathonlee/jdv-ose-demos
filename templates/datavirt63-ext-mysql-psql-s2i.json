@@ -8,10 +8,10 @@
             "tags": "jdv,datavirt,mysql,postgresql,jboss,xpaas",
             "version": "1.4.0"
         },
-        "name": "datavirt63-datafederation-s2i"
+        "name": "datavirt63-ext-mysql-psql-s2i"
     },
     "labels": {
-        "template": "datavirt63-datafederation-s2i",
+        "template": "datavirt63-ext-mysql-psql-s2i",
         "xpaas": "1.4.0"
     },
     "message": "A new data service has been created in your project.  The username/password for accessing the JDV service is ${TEIID_USERNAME}/${TEIID_PASSWORD}.  Please be sure to create the \"${SERVICE_ACCOUNT_NAME}\" service account and the following secrets: \"${CONFIGURATION_NAME}\" containing the datasource configuration details required by the deployed VDB(s); \"${HTTPS_SECRET}\" containing the ${HTTPS_KEYSTORE} file used for serving secure content; \"${JGROUPS_ENCRYPT_SECRET}\" containing the ${JGROUPS_ENCRYPT_KEYSTORE} file used for securing JGroups communications.",
