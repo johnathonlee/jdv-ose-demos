@@ -4,13 +4,13 @@
 --
 
 CREATE TABLE account (
-  AccountId decimal(18,0) NOT NULL,
-  CustomerID varchar(12) NOT NULL,
-  AccountType char(10) DEFAULT NULL,
-  AccountStatus char(10) DEFAULT NULL,
-  DATEOPENED datetime NOT NULL,
-  DATECLOSED datetime DEFAULT NULL,
-  PRIMARY KEY (AccountId)
+  accountid decimal(18,0) NOT NULL,
+  customerid varchar(12) NOT NULL,
+  accounttype char(10) DEFAULT NULL,
+  accountstatus char(10) DEFAULT NULL,
+  dateopened datetime NOT NULL,
+  dateclosed datetime DEFAULT NULL,
+  PRIMARY KEY (accountid)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -18,12 +18,12 @@ CREATE TABLE account (
 --
 
 CREATE TABLE accountholdings (
-  TransactionID varchar(12) NOT NULL,
-  AccountID decimal(18,0) NOT NULL,
-  ProductID varchar(12) NOT NULL,
-  PURCHASEDATE datetime NOT NULL,
-  ProductShares decimal(20,6) DEFAULT NULL,
-  PRIMARY KEY (TransactionID)
+  transactionid varchar(12) NOT NULL,
+  accountid decimal(18,0) NOT NULL,
+  productid varchar(12) NOT NULL,
+  purchasedate datetime NOT NULL,
+  productshares decimal(20,6) DEFAULT NULL,
+  PRIMARY KEY (transactionid)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -32,18 +32,18 @@ CREATE TABLE accountholdings (
 --
 
 CREATE TABLE customer (
-  CustomerID varchar(12) NOT NULL,
-  FIRSTNAME varchar(25) NOT NULL,
-  LASTNAME varchar(25) NOT NULL,
-  MIDDLENAME varchar(15) DEFAULT NULL,
-  StreetAddress varchar(50) NOT NULL,
-  StreetAddress2 varchar(50) DEFAULT NULL,
-  CITY varchar(25) NOT NULL,
-  StateProvince varchar(25) DEFAULT NULL,
-  POSTALCODE varchar(15) NOT NULL,
-  COUNTRY varchar(10) DEFAULT NULL,
-  PhoneNumber varchar(30) DEFAULT NULL,
-  PRIMARY KEY (CustomerID)
+  customerid varchar(12) NOT NULL,
+  firstname varchar(25) NOT NULL,
+  lastname varchar(25) NOT NULL,
+  middlename varchar(15) DEFAULT NULL,
+  streetaddress varchar(50) NOT NULL,
+  streetaddress2 varchar(50) DEFAULT NULL,
+  city varchar(25) NOT NULL,
+  stateprovince varchar(25) DEFAULT NULL,
+  postalcode varchar(15) NOT NULL,
+  country varchar(10) DEFAULT NULL,
+  phonenumber varchar(30) DEFAULT NULL,
+  PRIMARY KEY (customerid)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ------------ CREATE CONSTRAINTS -------------------------

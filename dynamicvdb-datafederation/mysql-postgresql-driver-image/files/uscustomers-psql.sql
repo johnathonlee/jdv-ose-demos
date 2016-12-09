@@ -4,13 +4,13 @@
 --
 
 CREATE TABLE account (
-  AccountID decimal(18,0) NOT NULL,
-  SSN varchar(12) NOT NULL,
-  AccountType char(10) DEFAULT NULL,
-  AccountStatus char(10) DEFAULT NULL,
-  DATEOPENED timestamp NOT NULL,
-  DATECLOSED timestamp DEFAULT NULL,
-  PRIMARY KEY (AccountID)
+  accountid decimal(18,0) NOT NULL,
+  ssn varchar(12) NOT NULL,
+  accounttype char(10) DEFAULT NULL,
+  accountstatus char(10) DEFAULT NULL,
+  dateopened timestamp NOT NULL,
+  dateclosed timestamp DEFAULT NULL,
+  PRIMARY KEY (accountid)
 );
 
 --
@@ -18,12 +18,12 @@ CREATE TABLE account (
 --
 
 CREATE TABLE accountholdings (
-  TransactionID varchar(12) NOT NULL,
-  AccountID decimal(18,0) NOT NULL,
-  ProductID varchar(12) NOT NULL,
-  PURCHASEDATE timestamp NOT NULL,
-  ProductShares decimal(20,6) NOT NULL,
-  PRIMARY KEY (TransactionID)
+  transactionid varchar(12) NOT NULL,
+  accountid decimal(18,0) NOT NULL,
+  productid varchar(12) NOT NULL,
+  purchasedate timestamp NOT NULL,
+  productshares decimal(20,6) NOT NULL,
+  PRIMARY KEY (transactionid)
 );
 
 
@@ -32,17 +32,17 @@ CREATE TABLE accountholdings (
 --
 
 CREATE TABLE customer (
-  SSN varchar(12) NOT NULL,
-  FIRSTNAME varchar(25) NOT NULL,
-  LASTNAME varchar(25) NOT NULL,
-  MIDDLEInitial varchar(15) DEFAULT NULL,
-  StreetAddress1 varchar(50) NOT NULL,
-  AptNumber varchar(50) DEFAULT NULL,
-  CITY varchar(25) NOT NULL,
-  State varchar(25) DEFAULT NULL,
-  ZipCode varchar(15) NOT NULL,
-  Phone varchar(30) DEFAULT NULL,
-  PRIMARY KEY (SSN)
+  ssn varchar(12) NOT NULL,
+  firstname varchar(25) NOT NULL,
+  lastname varchar(25) NOT NULL,
+  middleinitial varchar(15) DEFAULT NULL,
+  streetaddress1 varchar(50) NOT NULL,
+  aptnumber varchar(50) DEFAULT NULL,
+  city varchar(25) NOT NULL,
+  state varchar(25) DEFAULT NULL,
+  zipcode varchar(15) NOT NULL,
+  phone varchar(30) DEFAULT NULL,
+  PRIMARY KEY (ssn)
 );
 
 ------- CREATE CONSTRAINTS  ----------------------------
