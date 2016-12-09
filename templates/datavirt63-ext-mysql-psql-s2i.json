@@ -31,6 +31,13 @@
             "required": true
         },
         {
+            "description": "The name of the secret containing post-configure.sh to populate the databases.",
+            "displayName": "Post configure populate DBMS Secret Name",
+            "name": "POPULATE_DBMS_NAME",
+            "value": "datavirt-populate-dbms",
+            "required": true
+        },        
+        {
             "description": "Specify a custom hostname for the http route.  Leave blank to use default hostname, e.g.: <service-name>-<project>.<default-domain-suffix>",
             "displayName": "Custom http Route Hostname",
             "name": "HOSTNAME_HTTP",
@@ -682,16 +689,16 @@
             },
             "spec": {
                 "strategy": { 
-                    "type": "Recreate",
+                    "type": "Recreate" ,
                     "recreateParams": {
                         "post": {
-                            "failurePolicy": "Abort",
+                            "container-name":"${APPLICATION_NAME}",
                             "execNewPod": {
-                                "containerName": "${APPLICATION_NAME}",
-                                "command": [ "bash -c mysql -u ${MYSQL_USERNAME} --password='${MYSQL_PASSWORD}' -D ${MYSQL_DATABASE} -h ${APPLICATION_NAME}-mysql < /home/jboss/source/extensions/extras/eucustomers-mysql.sql" ]
+                                "command": [ "bash","-c","$HOME/source/extensions/extras/populatedbms.sh"]
                             }
-                        }
-                    }
+                        } 
+                    } 
+                 }
                 },
                 "triggers": [
                     {
@@ -955,7 +962,13 @@
                                 "secret": {
                                     "secretName": "${JGROUPS_ENCRYPT_SECRET}"
                                 }
-                            }
+                            },
+                            {
+                                "name": "populate-dbms-volume",
+                                "secret": {
+                                    "secretName": "${JGROUPS_ENCRYPT_SECRET}"
+                                }
+                            }                            
                         ]
                     }
                 }
