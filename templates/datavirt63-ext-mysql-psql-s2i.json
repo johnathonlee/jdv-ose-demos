@@ -698,8 +698,7 @@
                             }
                         } 
                     } 
-                 }
-                },
+                 },
                 "triggers": [
                     {
                         "type": "ImageChange",
@@ -962,13 +961,7 @@
                                 "secret": {
                                     "secretName": "${JGROUPS_ENCRYPT_SECRET}"
                                 }
-                            },
-                            {
-                                "name": "populate-dbms-volume",
-                                "secret": {
-                                    "secretName": "${JGROUPS_ENCRYPT_SECRET}"
-                                }
-                            }                            
+                            }
                         ]
                     }
                 }
