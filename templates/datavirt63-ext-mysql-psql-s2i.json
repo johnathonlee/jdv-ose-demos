@@ -29,7 +29,7 @@
             "name": "CONFIGURATION_NAME",
             "value": "datavirt-app-config",
             "required": true
-        },     
+        },
         {
             "description": "Specify a custom hostname for the http route.  Leave blank to use default hostname, e.g.: <service-name>-<project>.<default-domain-suffix>",
             "displayName": "Custom http Route Hostname",
@@ -682,16 +682,17 @@
             },
             "spec": {
                 "strategy": { 
-                    "type": "Recreate" ,
+                    "type": "Recreate",
                     "recreateParams": {
-                        "post": {                            
+                        "post": {
+                            "failurePolicy": "Abort",
                             "execNewPod": {
-                                "container-name":"${APPLICATION_NAME}",
-                                "command": [ "bash","-c","$HOME/source/extensions/extras/populatedbms.sh"]
+                                "containerName": "${APPLICATION_NAME}",
+                                "command": [ "bash","-c","$HOME/source/extensions/extras/populatedbms.sh" ]
                             }
-                        } 
-                    } 
-                 },
+                        }
+                    }
+                },
                 "triggers": [
                     {
                         "type": "ImageChange",
