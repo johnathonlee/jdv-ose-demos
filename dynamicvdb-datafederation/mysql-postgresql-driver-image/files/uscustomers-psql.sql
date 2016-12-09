@@ -1,11 +1,3 @@
---
--- Current Database: uscustomers
---
-DROP DATABASE IF EXISTS uscustomers;
-
-CREATE DATABASE uscustomers;
-
-\connect uscustomers;
 
 --
 -- Table structure for table account

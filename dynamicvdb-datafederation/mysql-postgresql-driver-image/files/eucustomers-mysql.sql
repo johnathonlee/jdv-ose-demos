@@ -1,12 +1,5 @@
 
 --
-DROP DATABASE IF EXISTS eucustomers;
-
-CREATE DATABASE eucustomers;
-
-use eucustomers;
-
---
 -- Table structure for table account
 --
 
