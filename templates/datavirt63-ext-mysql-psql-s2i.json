@@ -921,7 +921,15 @@
                                     {
                                         "name": "MYSQL_SERVICE_PORT",
                                         "value": "3306"                                         
-                                    },                                                                   
+                                    },       
+                                    {
+                                        "name": "POSTGRESQL_SERVICE_PREFIX_MAPPING",
+                                        "value": "${APPLICATION_NAME}-postgresql=POSTGRESQL"
+                                    },                 
+                                    {
+                                        "name": "POSTGRESQL_JNDI",
+                                        "value": "${POSTGRESQL_JNDI}"
+                                    },                                                                               
                                     {
                                         "name": "POSTGRESQL_USERNAME",
                                         "value": "${POSTGRESQL_USERNAME}"
@@ -935,13 +943,14 @@
                                         "value": "${POSTGRESQL_DATABASE}"
                                     },
                                     {
-                                        "name": "POSTGRESQL_SERVICE_PREFIX_MAPPING",
-                                        "value": "${APPLICATION_NAME}-postgresql=POSTGRESQL"
-                                    },
+                                        "name": "POSTGRESQL_SERVICE_HOST",
+                                        "value": "${APPLICATION_NAME}-mysql"                                         
+                                    },   
                                     {
-                                        "name": "POSTGRESQL_JNDI",
-                                        "value": "${POSTGRESQL_JNDI}"
-                                    }                               
+                                        "name": "POSTGRESQL_SERVICE_PORT",
+                                        "value": "3306"                                         
+                                    },       
+                                                                  
                                 ]
                             }
                         ],
