@@ -1,3 +1,6 @@
+DROP TABLE IF EXISTS account;
+DROP TABLE IF EXISTS accountholdings;
+DROP TABLE IF EXISTS customer;
 
 --
 -- Table structure for table account
