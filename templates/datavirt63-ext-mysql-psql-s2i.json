@@ -907,11 +907,11 @@
                                         "value": "${MYSQL_DATABASE}"
                                     } ,  
                                     {
-                                        "name": "EUCUSTOMERS_SERVICE_HOST",
+                                        "name": "MYSQL_SERVICE_HOST",
                                         "value": "${APPLICATION_NAME}-mysql"                                         
                                     },   
                                     {
-                                        "name": "EUCUSTOMERS_SERVICE_PORT",
+                                        "name": "MYSQL_SERVICE_PORT",
                                         "value": "3306"                                         
                                     },                                                                   
                                     {
@@ -927,11 +927,11 @@
                                         "value": "${POSTGRESQL_DATABASE}"
                                     },
                                     {
-                                        "name": "USCUSTOMERS_SERVICE_HOST",
+                                        "name": "POSTGRESQL_SERVICE_HOST",
                                         "value": "${APPLICATION_NAME}-postgresql"                                         
                                     },
                                     {
-                                        "name": "USCUSTOMERS_SERVICE_PORT",
+                                        "name": "POSTGRESQL_SERVICE_PORT",
                                         "value": "5432"                                         
                                     }                                    
                                 ]
