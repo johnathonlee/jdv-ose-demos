@@ -944,7 +944,7 @@
                                     },
                                     {
                                         "name": "POSTGRESQL_SERVICE_HOST",
-                                        "value": "${APPLICATION_NAME}-mysql"                                         
+                                        "value": "${APPLICATION_NAME}-postgresql"                                         
                                     },   
                                     {
                                         "name": "POSTGRESQL_SERVICE_PORT",
