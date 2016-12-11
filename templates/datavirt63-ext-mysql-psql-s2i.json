@@ -949,7 +949,7 @@
                                     {
                                         "name": "POSTGRESQL_SERVICE_PORT",
                                         "value": "3306"                                         
-                                    },       
+                                    }       
                                                                   
                                 ]
                             }
