@@ -253,7 +253,7 @@
             "description": "Database JNDI name used by application to resolve the datasource, e.g. java:/jboss/datasources/mysql",
             "name": "MYSQL_JNDI",
             "value": "java:jboss/datasources/EUCustomersDS",
-            "required": true
+            "required": false
         },
         {
             "description": "Database name",
@@ -317,7 +317,7 @@
             "description": "Database JNDI name used by application to resolve the datasource, e.g. java:/jboss/datasources/postgresql",
             "name": "POSTGRESQL_JNDI",
             "value": "java:jboss/datasources/USCustomersDS",
-            "required": true
+            "required": false
         },
         {
             "description": "Database name",
@@ -896,61 +896,44 @@
                                         "value": "${HTTPS_PASSWORD}"
                                     },
                                     {
-                                        "name": "MYSQL_SERVICE_PREFIX_MAPPING",
-                                        "value": "${APPLICATION_NAME}-mysql=MYSQL"
-                                    },
-                                    {
-                                        "name": "MYSQL_JNDI",
-                                        "value": "${MYSQL_JNDI}"
-                                    },
-                                    {
                                         "name": "MYSQL_USERNAME",
                                         "value": "${MYSQL_USERNAME}"
-                                    },                                        
-                                    {
+                                    } ,                                        {
                                         "name": "MYSQL_PASSWORD",
                                         "value": "${MYSQL_PASSWORD}"
-                                    },  
+                                    } ,  
                                     {
                                         "name": "MYSQL_DATABASE",
                                         "value": "${MYSQL_DATABASE}"
-                                    },  
+                                    } ,  
                                     {
-                                        "name": "MYSQL_SERVICE_HOST",
+                                        "name": "EUCUSTOMERS_SERVICE_HOST",
                                         "value": "${APPLICATION_NAME}-mysql"                                         
                                     },   
                                     {
-                                        "name": "MYSQL_SERVICE_PORT",
+                                        "name": "EUCUSTOMERS_SERVICE_PORT",
                                         "value": "3306"                                         
-                                    },       
-                                    {
-                                        "name": "POSTGRESQL_SERVICE_PREFIX_MAPPING",
-                                        "value": "${APPLICATION_NAME}-postgresql=POSTGRESQL"
-                                    },                 
-                                    {
-                                        "name": "POSTGRESQL_JNDI",
-                                        "value": "${POSTGRESQL_JNDI}"
-                                    },                                                                               
+                                    },                                                                   
                                     {
                                         "name": "POSTGRESQL_USERNAME",
                                         "value": "${POSTGRESQL_USERNAME}"
-                                    },  
+                                    } ,  
                                     {
                                         "name": "POSTGRESQL_PASSWORD",
                                         "value": "${POSTGRESQL_PASSWORD}"
-                                    },  
+                                    } ,  
                                     {
                                         "name": "POSTGRESQL_DATABASE",
                                         "value": "${POSTGRESQL_DATABASE}"
                                     },
                                     {
-                                        "name": "POSTGRESQL_SERVICE_HOST",
+                                        "name": "USCUSTOMERS_SERVICE_HOST",
                                         "value": "${APPLICATION_NAME}-postgresql"                                         
-                                    },   
+                                    },
                                     {
-                                        "name": "POSTGRESQL_SERVICE_PORT",
-                                        "value": "3306"                                         
-                                    }                                                                         
+                                        "name": "USCUSTOMERS_SERVICE_PORT",
+                                        "value": "5432"                                         
+                                    }                                    
                                 ]
                             }
                         ],
