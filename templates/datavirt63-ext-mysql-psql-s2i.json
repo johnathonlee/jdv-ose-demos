@@ -253,7 +253,7 @@
             "description": "Database JNDI name used by application to resolve the datasource, e.g. java:/jboss/datasources/mysql",
             "name": "MYSQL_JNDI",
             "value": "java:jboss/datasources/EUCustomersDS",
-            "required": false
+            "required": true
         },
         {
             "description": "Database name",
@@ -317,7 +317,7 @@
             "description": "Database JNDI name used by application to resolve the datasource, e.g. java:/jboss/datasources/postgresql",
             "name": "POSTGRESQL_JNDI",
             "value": "java:jboss/datasources/USCustomersDS",
-            "required": false
+            "required": true
         },
         {
             "description": "Database name",
