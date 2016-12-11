@@ -936,7 +936,7 @@
                                     },
                                     {
                                         "name": "POSTGRESQL_SERVICE_PREFIX_MAPPING",
-                                        "value": "${APPLICATION_NAME}-mysql=POSTGRESQL"
+                                        "value": "${APPLICATION_NAME}-postgresql=POSTGRESQL"
                                     },
                                     {
                                         "name": "POSTGRESQL_JNDI",
