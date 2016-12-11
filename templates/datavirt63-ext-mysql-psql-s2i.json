@@ -906,14 +906,15 @@
                                     {
                                         "name": "MYSQL_USERNAME",
                                         "value": "${MYSQL_USERNAME}"
-                                    } ,                                        {
+                                    },                                        
+                                    {
                                         "name": "MYSQL_PASSWORD",
                                         "value": "${MYSQL_PASSWORD}"
-                                    } ,  
+                                    },  
                                     {
                                         "name": "MYSQL_DATABASE",
                                         "value": "${MYSQL_DATABASE}"
-                                    } ,  
+                                    },  
                                     {
                                         "name": "MYSQL_SERVICE_HOST",
                                         "value": "${APPLICATION_NAME}-mysql"                                         
@@ -933,11 +934,11 @@
                                     {
                                         "name": "POSTGRESQL_USERNAME",
                                         "value": "${POSTGRESQL_USERNAME}"
-                                    } ,  
+                                    },  
                                     {
                                         "name": "POSTGRESQL_PASSWORD",
                                         "value": "${POSTGRESQL_PASSWORD}"
-                                    } ,  
+                                    },  
                                     {
                                         "name": "POSTGRESQL_DATABASE",
                                         "value": "${POSTGRESQL_DATABASE}"
@@ -949,8 +950,7 @@
                                     {
                                         "name": "POSTGRESQL_SERVICE_PORT",
                                         "value": "3306"                                         
-                                    }       
-                                                                  
+                                    }                                                                         
                                 ]
                             }
                         ],
