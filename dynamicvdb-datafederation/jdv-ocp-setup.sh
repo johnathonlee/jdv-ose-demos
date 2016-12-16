@@ -12,6 +12,8 @@ echo 'Creating a new project called jdv-datafederation-demo'
 oc new-project jdv-datafederation-demo
 echo 'Creating a service account and accompanying secret for use by the datavirt application'
 oc create -f https://raw.githubusercontent.com/cvanball/jdv-ose-demos/master/dynamicvdb-datafederation/mysql-postgresql-driver-image/datavirt-app-secret.yaml
+echo 'Add the role view to the service account under which the pod is running'
+oadm policy add-role-to-user view system:serviceaccount:jdv-datafederation-demo:datavirt-service-account
 echo 'Retrieving datasource properties (market data flat file and country list web service hosted on public internet)'
 curl https://raw.githubusercontent.com/cvanball/jdv-ose-demos/master/dynamicvdb-datafederation/mysql-postgresql-driver-image/datasources.properties -o datasources.properties
 echo 'Creating a secret around the datasource properties'
