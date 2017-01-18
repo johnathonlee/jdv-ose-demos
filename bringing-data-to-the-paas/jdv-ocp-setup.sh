@@ -14,7 +14,7 @@ echo 'Creating a service account and accompanying secret for use by the datavirt
 oc create -f https://raw.githubusercontent.com/cvanball/jdv-ose-demos/master/bringing-data-to-the-paas/oracle-postgresql-driver-image/datavirt-app-secret.yaml
 echo 'Add the role view to the service account under which the pod is running'
 oadm policy add-role-to-user view system:serviceaccount:jdv-bringing-data-to-the-paas-demo:datavirt-service-account
-echo 'Retrieving datasource properties (market data flat file and country list web service hosted on public internet)'
+echo 'Retrieving datasource properties (US customers in a PostgreSQL database &EU customers in an Oracle database)'
 curl https://raw.githubusercontent.com/cvanball/jdv-ose-demos/master/bringing-data-to-the-paas/oracle-postgresql-driver-image/datasources.properties -o datasources.properties
 echo 'Creating a secret around the datasource properties'
 oc secrets new datavirt-app-config datasources.properties
