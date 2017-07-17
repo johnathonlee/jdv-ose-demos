@@ -55,7 +55,7 @@
             "description": "The URL of the repository with your application source code.",
             "displayName": "Git Repository URL",
             "name": "SOURCE_REPOSITORY_URL",
-            "value": "https://github.com/cvanball/jdv-ose-demos",
+            "value": "https://github.com/johnathonlee/jdv-ose-demos",
             "required": true
         },
         {
@@ -76,7 +76,7 @@
             "description": "The URL of the repository with source code for the extensions image.  The image should have all modules, etc., placed in the \"/extensions/\" directory in the image.  If the contents are in a different directory, the sourcePath for the ImageSource in the BuildConfig must be modified.",
             "displayName": "Extensions Git Repository URL",
             "name": "EXTENSIONS_REPOSITORY_URL",
-            "value": "https://github.com/cvanball/jdv-ose-demos",
+            "value": "https://github.com/johnathonlee/jdv-ose-demos",
             "required": true
         },
         {
