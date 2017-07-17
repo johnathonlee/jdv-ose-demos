@@ -272,8 +272,14 @@
             "required": false
         },
         {
+            "description": "Sets xa-pool/max-pool-size for the configured datasource.",
+            "name": "ORACLE_IS_SAME_RM_OVERRIDE",
+            "required": false
+        },
+	{
             "description": "Sets transaction-isolation for the configured datasource.",
             "name": "ORACLE_TX_ISOLATION",
+	    "value": "READ_UNCOMMITTED",
             "required": false
         },
         {
