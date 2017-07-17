@@ -55,7 +55,7 @@
             "description": "The URL of the repository with your application source code.",
             "displayName": "Git Repository URL",
             "name": "SOURCE_REPOSITORY_URL",
-            "value": "https://github.com/cvanball/jdv-ose-demos",
+            "value": "https://github.com/johnathonlee/jdv-ose-demos",
             "required": true
         },
         {
@@ -76,7 +76,7 @@
             "description": "The URL of the repository with source code for the extensions image.  The image should have all modules, etc., placed in the \"/extensions/\" directory in the image.  If the contents are in a different directory, the sourcePath for the ImageSource in the BuildConfig must be modified.",
             "displayName": "Extensions Git Repository URL",
             "name": "EXTENSIONS_REPOSITORY_URL",
-            "value": "https://github.com/cvanball/jdv-ose-demos",
+            "value": "https://github.com/johnathonlee/jdv-ose-demos",
             "required": true
         },
         {
@@ -272,8 +272,14 @@
             "required": false
         },
         {
+            "description": "Sets is_same_rm_override",
+            "name": "ORACLE_IS_SAME_RM_OVERRIDE",
+            "required": false
+        },
+	{
             "description": "Sets transaction-isolation for the configured datasource.",
             "name": "ORACLE_TX_ISOLATION",
+	    "value": "READ_UNCOMMITTED",
             "required": false
         },
         {
