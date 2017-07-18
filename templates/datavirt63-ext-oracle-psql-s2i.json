@@ -303,11 +303,6 @@
             "name": "ORACLE_FT_MAX_WORD_LEN",
             "required": false
         },
-        #{
-        #    "description": "Controls the innodb_use_native_aio setting value if the native AIO is broken.",
-        #    "name": "ORACLE_AIO",
-        #    "required": false
-        #},
         {
             "description": "PostgresSQL Database user name",
             "name": "POSTGRESQL_USERNAME",
