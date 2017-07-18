@@ -273,8 +273,9 @@
         },
         {
             "description": "Sets is_same_rm_override",
-            "name": "ORACLE_IS_SAME_RM_OVERRIDE",
-            "required": false
+	    "name": "ORACLE_IS_SAME_RM_OVERRIDE",
+            "value": "true",
+	    "required": false
         },
 	{
             "description": "Sets transaction-isolation for the configured datasource.",
@@ -302,11 +303,11 @@
             "name": "ORACLE_FT_MAX_WORD_LEN",
             "required": false
         },
-        {
-            "description": "Controls the innodb_use_native_aio setting value if the native AIO is broken.",
-            "name": "ORACLE_AIO",
-            "required": false
-        },
+        #{
+        #    "description": "Controls the innodb_use_native_aio setting value if the native AIO is broken.",
+        #    "name": "ORACLE_AIO",
+        #    "required": false
+        #},
         {
             "description": "PostgresSQL Database user name",
             "name": "POSTGRESQL_USERNAME",
