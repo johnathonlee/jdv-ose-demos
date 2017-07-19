@@ -131,6 +131,7 @@
                 <xa-datasource jndi-name="java:jboss/datasources/EUCustomersDS" pool-name="eucustomers-EUCUSTOMERS" use-java-context="true" enabled="true"> 
 			<xa-datasource-property name="URL">jdbc:oracle:thin:@192.168.99.100:1521:XE</xa-datasource-property> 
 			<driver>oracle</driver> 
+			<transaction-isolation>TRANSACTION_READ_UNCOMMITTED</transaction-isolation>
 			<xa-pool> 
 			    <min-pool-size>5</min-pool-size> 
 			    <max-pool-size>10</max-pool-size>
